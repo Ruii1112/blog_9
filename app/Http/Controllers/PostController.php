@@ -21,7 +21,7 @@ class PostController extends Controller
     }
     
     public function store(PostRequest $request, Post $post){
-        $input = $request['post'];
+        $input = $request->post;
         $post->fill($input)->save();
         return redirect('posts/'. $post->id);
     }
